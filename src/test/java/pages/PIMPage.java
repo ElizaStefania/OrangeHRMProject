@@ -123,13 +123,18 @@ public class PIMPage extends BasePage{
 
     public void createEmployee(PIMFormObject testData) throws InterruptedException {
         elementMethods.clickElement(pimButton);
+        LoggerUtility.info("The user clicked on the PIM button");
         elementMethods.clickJSElement(addEmployeeButton);
+        LoggerUtility.info("The user clicked on the Add button");
         File file = new File("src/test/resources/" + testData.getUploadPictureValue());
         addEmplyeePicture.sendKeys(file.getAbsolutePath());
-
+        LoggerUtility.info("The user added the employee picture");
         elementMethods.fillElement(firstNameElement, testData.getFirstNameValue());
+        LoggerUtility.info("The user added the first name");
         elementMethods.fillElement(middleNameElement, testData.getMiddleNameValue());
+        LoggerUtility.info("The user added the middle name");
         elementMethods.fillElement(lastNameElement, testData.getFirstNameValue());
+        LoggerUtility.info("The user added the last name");
         WebElement empID = txtEmployeeId.get(4);
         Thread.sleep(2000);
         empID.clear();
@@ -137,11 +142,16 @@ public class PIMPage extends BasePage{
         empID.sendKeys(testData.getEmployeeIdValue());
         Thread.sleep(1000);
         btnToggle.click();
+        LoggerUtility.info("The user added the employee id");
         txtInput.get(7).sendKeys(testData.getUserNameValue());
+        LoggerUtility.info("The user added the user name ");
         txtInput.get(10).sendKeys(testData.getPasswordValue());
+        LoggerUtility.info("The user added the pasword");
         txtInput.get(11).sendKeys(testData.getPasswordValue());
+        LoggerUtility.info("The user confirmed the password");
         Thread.sleep(1500);
         Submit.get(0).click();
+        LoggerUtility.info("The user clicked the Save button");
 
         //txtDriverLicence.get(7).sendKeys();
     }
@@ -149,13 +159,19 @@ public class PIMPage extends BasePage{
     public void personalDetails(PIMFormObject testData) throws InterruptedException{
         Thread.sleep(10000);
         txtInput.get(6).sendKeys(testData.getLicenceDriver());
+        LoggerUtility.info("The user entered the licence driver");
         pageMethods.scrollPage(0, 350);
+        LoggerUtility.info("The user scrolls down the page");
         elementMethods.fillElement(licenceExpiryDay, testData.getLicenceExpiryDayValue());
+        LoggerUtility.info("The user entered the licence expire day");
         elementMethods.fillElement(nationalityElement, testData.getNationalityTextValue());
         LoggerUtility.info("The user chose the following nationality: " + testData.getNationalityTextValue());
         elementMethods.fillElement(maritalElement, testData.getMaritalStatusValue());
+        LoggerUtility.info("The user has chosed the marital status");
         elementMethods.fillElement(dateOfBirth, testData.getDayOfBirthValue());
+        LoggerUtility.info("The user entered the birth day");
         pageMethods.scrollPage(0, 150);
+        LoggerUtility.info("The user scrolls down the page");
         Thread.sleep(1500);
 
         switch (testData.getGenderValue()){
@@ -168,47 +184,73 @@ public class PIMPage extends BasePage{
         }
         LoggerUtility.info("The user selected the gender: " + testData.getGenderValue());
         Submit.get(0).click();
+        LoggerUtility.info("The user clicked the Save button");
         pageMethods.scrollPage(0, 150);
         elementMethods.fillElement(bloodType, testData.getBloodTypeValue());
         Submit.get(1).click();
+        LoggerUtility.info("The user clicked the Save button");
     }
 
     public void contactDetails(PIMFormObject testData) throws InterruptedException{
         pageMethods.scrollPage(0, -500);
+        LoggerUtility.info("The user scrolls down the page");
         contactDetails.click();
+        LoggerUtility.info("The user clicked the Contact Details button");
         Thread.sleep(1500);
         elementMethods.fillElement(street1Input, testData.getStreet1Value());
+        LoggerUtility.info("The user entered the street1 value");
         elementMethods.fillElement(street2Input, testData.getStreet2Value());
+        LoggerUtility.info("The user entered the street2 value");
         elementMethods.fillElement(cityInput, testData.getCityValue());
+        LoggerUtility.info("The user entered the city value");
         elementMethods.fillElement(stateInput, testData.getStateInput());
+        LoggerUtility.info("The user entered the state value");
         elementMethods.fillElement(zipInput, testData.getZipInput());
+        LoggerUtility.info("The user entered the zip value");
         elementMethods.fillElement(country, testData.getCountryValue());
+        LoggerUtility.info("The user entered the country value");
         elementMethods.fillElement(mobileInput, testData.getMobileValue());
+        LoggerUtility.info("The user entered the mobile number");
         pageMethods.scrollPage(0, 150);
         elementMethods.fillElement(workEmailInput, testData.getWorkEmailValue());
+        LoggerUtility.info("The user entered the email");
         Submit.get(0).click();
+        LoggerUtility.info("The user clicked the Save button");
     }
 
     public void emergencyContacts(PIMFormObject testData) throws InterruptedException{
         pageMethods.scrollPage(0, -500);
+        LoggerUtility.info("The user scrolls down the page");
         emergencyContacts.click();
+        LoggerUtility.info("The user clicked the Emergency Contacts button");
         assignedEmergencyContactsAddButton.click();
+        LoggerUtility.info("The user clicked the Assigned Emergency Contacts ADD button");
         elementMethods.fillElement(nameInputBox, testData.getNameInputBoxValue());
+        LoggerUtility.info("The user entered the name");
         elementMethods.fillElement(relationshipInputBox, testData.getRelationshipInputBoxValue());
+        LoggerUtility.info("The user entered the relationship");
         elementMethods.fillElement(mobileInputBox, testData.getMobileInputBoxValue());
+        LoggerUtility.info("The user entered the mobile number");
         Submit.get(0).click();
+        LoggerUtility.info("The user clicked the Save button");
     }
 
     public void dependents(PIMFormObject testData) throws InterruptedException{
         pageMethods.scrollPage(0, -500);
+        LoggerUtility.info("The user scrolls down the page");
         dependents.click();
+        LoggerUtility.info("The user clicked the Dependents button");
         assignedDependentsAddButton.click();
+        LoggerUtility.info("The user clicked the Assigned Dependents Add button");
         elementMethods.fillElement(nameInputBox, testData.getNameInputBoxDependentsValue());
+        LoggerUtility.info("The user entered the name of the dependents");
         elementMethods.fillElement(relationshipDropdown, testData.getRelationshipInputBoxDependentsValue());
+        LoggerUtility.info("The user entered the relationship of the dependents");
         relationshipDropdown.sendKeys(Keys.ENTER);
         elementMethods.fillElement(dateOfBirthInputBox, testData.getDateOfBirthInputBoxValue());
-
+        LoggerUtility.info("The user entered the date of birth");
         Submit.get(0).click();
+        LoggerUtility.info("The user clicked the Save button");
     }
 
 
