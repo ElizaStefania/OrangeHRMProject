@@ -4,8 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import javax.lang.model.element.Element;
-import javax.lang.model.util.Elements;
 import java.time.Duration;
 import java.util.List;
 

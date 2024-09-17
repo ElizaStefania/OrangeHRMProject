@@ -1,11 +1,9 @@
 package pages;
 
-import methods.ActionMethod;
-import methods.ElementMethods;
-import methods.PageMethods;
-import methods.ValidateMethod;
+import methods.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import takescreenshot.ScreenshotExample;
 
 public class BasePage {
 

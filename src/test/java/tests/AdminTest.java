@@ -1,11 +1,11 @@
 package tests;
 
-import objectData.PIMFormObject;
 import objectData.UserObject;
 import org.testng.annotations.Test;
 import pages.AdminPage;
 import pages.LoginPage;
 import shareData.ShareData;
+import takescreenshot.ScreenshotExample;
 
 public class AdminTest extends ShareData {
 
@@ -18,5 +18,8 @@ public class AdminTest extends ShareData {
 
         AdminPage adminPage = new AdminPage(getDriver());
         adminPage.createUser(testData);
+        ScreenshotExample screenshotExample = new ScreenshotExample(getDriver());
+        screenshotExample.takeScreenshotOfPage();
+
     }
 }

@@ -19,5 +19,7 @@ public class DeleteUserTest extends ShareData {
         DeleteUserPage deleteUserPage = new DeleteUserPage(getDriver());
         deleteUserPage.deleteUser(testData);
 
+
+
     }
 }
